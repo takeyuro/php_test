@@ -35,10 +35,14 @@
   * 新規登録時にパスワードをハッシュ化するシステムを入れることで、ユーザー用DBにハッシュ値が表示され、ユーザーにしかパスワードがわからない設定にしました。
 
 # 環境構築の手順
- * https://www.php.net/downloads.php にて、PHP 7.2.34をダウンロードする。
- * https://www.apachefriends.org/jp/download.html にて、PHP 7.2.34用のXAMPPをApplicationフォルダにダウンロードする。
- * Applications/XAMPP/xamppfiles/htdocs内に新規フォルダを作成する。
- * 新しく作った新規フォルダ内に
+ 1. https://www.php.net/downloads.php にて、PHP 7.2.34をダウンロードする。
+ 2. https://www.apachefriends.org/jp/download.html にて、PHP 7.2.34用のXAMPPをApplicationフォルダにダウンロードする。
+ 3. Applications/XAMPP/xamppfiles/htdocs内に新規フォルダを作成する。
+ 4. README.mdとexport.sql以外のファイルを新しく作った新規フォルダ内に入れる。
+ 5. DB(export.sql)の実行を https://codeforfun.jp/how-to-import-sql-with-xampp/ の通りに行う。
+ 6. XAMPPファイル内にあるmanager-osx.appを起動する。
+ 7. Manage Serversをタップし、MySQL DatabaseとApache Web Serverを起動する。
+ 8. ブラウザで https://localhost/③で作ったファイル名/index.php を検索する。
 
 # 引用文献
 [マクドナルド公式サイト](https://www.mcdonalds.co.jp)
