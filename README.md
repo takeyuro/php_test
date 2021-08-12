@@ -42,7 +42,7 @@
  5. DB(export.sql)の実行を https://codeforfun.jp/how-to-import-sql-with-xampp/ の通りに行う。
  6. XAMPPファイル内にあるmanager-osx.appを起動する。
  7. Manage Serversをタップし、MySQL DatabaseとApache Web Serverを起動する。
- 8. ブラウザで https://localhost/③で作ったファイル名/index.php を検索する。
+ 8. ブラウザで https://localhost/3.で作ったファイル名/index.php を検索する。
 
 # 引用文献
 [マクドナルド公式サイト](https://www.mcdonalds.co.jp)
