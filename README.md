@@ -34,5 +34,11 @@
 * パスワードのハッシュ化
   * 新規登録時にパスワードをハッシュ化するシステムを入れることで、ユーザー用DBにハッシュ値が表示され、ユーザーにしかパスワードがわからない設定にしました。
 
+# 環境構築の手順
+ * https://www.php.net/downloads.php にて、PHP 7.2.34をダウンロードする。
+ * https://www.apachefriends.org/jp/download.html にて、PHP 7.2.34用のXAMPPをApplicationフォルダにダウンロードする。
+ * Applications/XAMPP/xamppfiles/htdocs内に新規フォルダを作成する。
+ * 新しく作った新規フォルダ内に
+
 # 引用文献
 [マクドナルド公式サイト](https://www.mcdonalds.co.jp)
