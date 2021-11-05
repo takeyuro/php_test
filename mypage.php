@@ -134,7 +134,7 @@
 					echo '<div class="insert_complete">
 						<form action="index.php">
 							<img src="http://localhost/test/images_test_6/mcd_22.png">
-							<p>EmailまたはPasswordが正しくありません。</p>
+							<p>Eメールまたはパスワードが正しくありません。</p>
 							<input type="button" onclick="history.back()" value="ログインページへ" class="submit_update">
 						</form>
 					</div>';
