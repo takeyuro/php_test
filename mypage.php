@@ -128,7 +128,7 @@
 						echo '<p class="joho_mypage">　日本バーガークイーン株式会社は、ごはんバンズに福島県産米を100%使用した「ごはんてりやき」と「ごはんベーコンレタス」に加えて、初登場となる「ごはんフィッシュ 和風黒胡椒」の「ごはんバーガー」シリーズ3種を、17時からのディナー時間帯に販売する「夜マック」として3月10日(水)から全国のバーガークイーン店舗にて期間限定で販売いたします。夜ごはんの新しい選択肢として、多くのお客様にご好評いただいております。</p>';
 					echo '</div>';
 					echo '<div class="footer_toppage">';
-						echo 'produced by M.C.D.';
+						echo 'produced by M.C.W.';
 					echo '</div>';
 				} else {
 					echo '<div class="insert_complete">
