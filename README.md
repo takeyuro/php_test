@@ -46,15 +46,28 @@
 ## 環境構築の手順
  1. https://www.apachefriends.org/jp/download.html にて、XAMPPをApplicationフォルダにダウンロードする。バージョンは問いません。好きなバージョンをダウンロードしてください。
 
+ <br>
+
  2. Applications/XAMPP/xamppfiles/htdocs内に新規フォルダを作成する。
+    - もしxamppfileがない場合はApplications/XAMPP/htdocs内に新規ファイルを作成してください。
+
+<br>
 
  3. README.mdとexport.sql以外のファイルを新しく作った新規フォルダ内に入れる。
 
+ <br>
+
  4. DB(export.sql)の実行を https://codeforfun.jp/how-to-import-sql-with-xampp/ の通りに行う。
+
+ <br>
 
  5. XAMPPファイル内にあるmanager-osx.appを起動する。
 
+ <br>
+
  6. Manage Serversをタップし、MySQL DatabaseとApache Web Serverを起動する。
+
+ <br>
 
  7. ブラウザで https://localhost/3で作ったファイル名/index.php を検索する。
 
