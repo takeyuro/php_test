@@ -20,8 +20,8 @@
 				<input type="submit" value="ログイン" class="submit_index">
 			</form>
 		</div>
-		<div>
-			<p class="start_link"><a href="insert.php" class="link_index">新規会員登録はコチラ</a></p>
+		<div class="froats_index">
+			<a href="insert.php" class="link_index">新規会員登録はコチラ</a>
 		</div>
 	</body>
 </html>
