@@ -1,5 +1,6 @@
 <?php
 	try {
+		// POST送信で送られてきた値を変数に格納する。
 		$name =  $_POST["name"];
 		$email = $_POST["email"];
 		$password = $_POST["password"];
@@ -16,13 +17,21 @@
 		$old = htmlspecialchars($old,ENT_QUOTES,'UTF-8');
 		$memo = htmlspecialchars($memo,ENT_QUOTES,'UTF-8');
 		
+		// パスワードをハッシュ化
 		$password = password_hash($password,PASSWORD_DEFAULT);
 		
+		//データベースに接続
+		$db = mysqli_connect("localhost","root","admin","user");
+
+		// 送られてきたユーザー情報をuserinfoテーブルに登録
 		$sql = "insert into userinfo (name,email,password,area,gender,old,memo)value
 		('" .$name. "','" .$email. "','" .$password. "','" .$area. "',
 		'" .$gender. "'," .$old. ",'" .$memo. "')";
-		$db = mysqli_connect("localhost","root","admin","user");
+		
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';

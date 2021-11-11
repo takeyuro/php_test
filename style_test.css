@@ -293,6 +293,11 @@
 	text-decoration:none;
 }
 
+.osirase_link_toppage:hover {
+	background-color:#e9546b;
+	color:white;
+}
+
 .osusume_toppage {
 	text-align:left;
 	margin:45px 1150px 30px 0;

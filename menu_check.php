@@ -6,9 +6,17 @@
 		} else {
 			$id = $_GET["id"];
 		}
+
+		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
+
+		// 受け取ったidに該当する商品の情報をデータベースから取得
 		$sql = "select * from product where id=" .$id;
+
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
@@ -46,6 +54,7 @@
 								echo '<p>¥ ' .$data["price"]. '</p>';
 								echo '<div class="option_menu_check">';
 									echo '<label for="price">点数　</label>';
+									// 購入する商品の個数を選択できる。個数ごとに値段が計算され、表示される。
 									echo '<select name="number">';
 										for ($i=1; $i < 6; $i++) {
 											echo '<option value="' .$i. '">' .$i. '点　￥ ' .$data["price"] * $i. ' </option>';

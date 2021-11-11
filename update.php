@@ -17,14 +17,22 @@
 		$old = htmlspecialchars($old,ENT_QUOTES,'UTF-8');
 		$memo = htmlspecialchars($memo,ENT_QUOTES,'UTF-8');
 		
+		// パスワードをハッシュ化
 		$password = password_hash($password,PASSWORD_DEFAULT);
 		
+		// データベースに接続
+		$db = mysqli_connect("localhost","root","admin","user");
+
+		// 送られてきたユーザー情報をuserinfoテーブルに更新
 		$sql = "update userinfo set
 		name='" .$name. "',email='" .$email. "', password='" .$password. "',
 		area='" .$area. "',gender='" .$gender. "', old=" .$old. ",
 		memo='" .$memo. "' where id=" .$id;
-		$db = mysqli_connect("localhost","root","admin","user");
+		
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';

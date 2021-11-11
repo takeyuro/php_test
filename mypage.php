@@ -11,12 +11,22 @@
 	$password = htmlspecialchars($password,ENT_QUOTES,'UTF-8');
 	
 	try {
+		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
+
+		// 取得したemailに該当するユーザー情報をテーブルから取得する
 		$sql = "select * from userinfo where email='" .$email. "'";
+
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
 		$loginFlug = false;
 		$name = "";
+
+		// $resultに格納されているmysqli_query関数の結果をArrey型に変換し、While文でレコードを取得
 		while ($data = mysqli_fetch_assoc($result)) {
+
+			// ハッシュ化されているパスワードを元の値に戻し、入力されたパスワードと一致していればログイン処理を行う
 			if (password_verify($password,$data["password"])) {
 				$name = $data["name"];
 				$loginFlug = true;
@@ -25,16 +35,26 @@
 				$_SESSION["password"] = $password;
 				$_SESSION["name"] = $name;
 			}
+
 		}
+
+		// データベースとの接続を解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 			echo 'ただいま障害により大変ご迷惑をおかけしております。';
 			exit();
 	}
 	try {
+		// データベースに接続
 		$db_2 = mysqli_connect("localhost","root","admin","user");
+
+		// osusumeカラムで1に設定されている商品の情報を取得
 		$sql_2 = "select * from product where osusume = '1'";
+
+		// クエリの実行
 		$result_2 = mysqli_query($db_2, $sql_2);
+
+		// データベースとの接続解除
 		mysqli_close($db_2);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
@@ -80,6 +100,8 @@
 					echo '</div>';
 					echo '<h3 class="osusume_toppage">おすすめメニュー</h3>';
 					echo '<p class="osusume_sentence_toppage">季節に合ったおすすめのメニューをご紹介します</p>';
+					
+					// 先ほど取得したosusumeカラムが1に設定されている商品を表示
 					while ($data_2 = mysqli_fetch_assoc($result_2)) {
 						echo '<form action="menu_check.php" method="post">';
 							echo '<div class="flex_menu">';
