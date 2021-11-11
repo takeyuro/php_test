@@ -2,9 +2,17 @@
 	session_start();
 	try {
 		$id = $_SESSION["id"];
+
+		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
+
+		// userinfoテーブルから該当するidのユーザー情報を取得
 		$sql = "select * from userinfo where id=" .$id;
+
+		// クエリの実行
 		$result = mysqli_query($db,$sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
@@ -41,6 +49,8 @@
 							$areaList = array("北海道","東北地方","関東地方","中部地方","近畿地方","中国地方","四国地方","九州地方","沖縄県");
 							echo '<select name="area" class="select_insert">';
 							for ($i=0; $i<count($areaList); $i++) {
+
+								// 選択した血液型にチェックマークを入れる
 								if ($data["blood"] == $areaList[$i]) {
 									echo '<option value="' .$areaList[$i]. '" selected>' .$areaList[$i]. '</option>';
 								} else {
@@ -51,6 +61,7 @@
 						echo '</div>';
 						echo '<div class="texts_insert">';
 							echo '<label for="gender" class="label_insert">性別<br></label>';
+							// ユーザーが男性なら男性に、女性なら女性にチェックマークが入る
 							if ($data["gender"] == 0) {
 								echo '<input type="radio" name="gender" value="0" checked=checked class="label_insert">男';
 								echo '<input type="radio" name="gender" value="1" class="label_insert">女<br>';

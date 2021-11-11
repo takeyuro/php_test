@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	try {
+		// タイムゾーンを取得
 		$org_timezone = date_default_timezone_get();
 		date_default_timezone_set('Asia/Tokyo');
 		
@@ -24,10 +25,17 @@
 		$genre2 = htmlspecialchars($genre2,ENT_QUOTES,'UTF-8');
 		$code = htmlspecialchars($code,ENT_QUOTES,'UTF-8');
 		
+		// データベースに接続
+		$db = mysqli_connect("localhost","root","admin","user");
+
+		// 購入したユーザー名や購入価格などの情報をデータベースに登録
 		$sql = "insert into sold (photo,name,number,price,user_name,date,date_2,genre2,code)value
 		('" .$photo. "','" .$name. "','" .$number. "','" .$price. "','" .$user_name. "','" .$date. "','" .$date_2. "','" .$genre2. "','" .$code. "')";
-		$db = mysqli_connect("localhost","root","admin","user");
+		
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 		
 		date_default_timezone_set($org_timezone);

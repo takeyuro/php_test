@@ -2,8 +2,10 @@
 	session_start();
 	try {
 		if (empty($_POST["search"]) && empty($_POST["value_low"]) && empty($_POST["value_high"])) {
+			// 検索情報がなければ全ての商品を表示
 			$sql = "select * from product";
 		} else if (empty($_POST["search"])) {
+			// 価格帯のみが入力されていた場合は該当する価格帯の範囲内全ての商品を表示
 			$value_low = $_POST["value_low"];
 			$value_high = $_POST["value_high"];
 		
@@ -12,10 +14,13 @@
 			
 			$sql = "select * from product where price >='" .$value_low. "' and price <= '" .$value_high. "'";
 		} else if (empty($_POST["value_low"]) && empty($_POST["value_high"])) {
+			// テキスト欄のみが入力されていた場合は該当するジャンルや名前の商品を表示する。
 			$search = $_POST["search"];
 			$search = htmlspecialchars($search,ENT_QUOTES,'UTF-8');
+			// 部分一致機能を入れているため、1文字だけ入力してもそれに該当する商品が表示される。例えば、「た」と入力するだけで「てりたま」などが表示される。
 			$sql = "select * from product where name='" .$search. "' or genre1='" .$search. "' or genre2='" .$search. "' or name like '%" .$search. "%'";
 		} else {
+			// テキスト欄と価格帯の両方に入力があった場合は該当する商品名やジャンル且つ価格帯の範囲内である商品を表示する。
 			$search = $_POST["search"];
 			$value_low = $_POST["value_low"];
 			$value_high = $_POST["value_high"];
@@ -26,8 +31,14 @@
 			
 			$sql = "select * from product where name='" .$search. "' or genre1='" .$search. "' or genre2='" .$search. "' or name like '%" .$search. "%' and price >='" .$value_low. "' and price <= '" .$value_high. "'";
 		}
+
+		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
+
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';

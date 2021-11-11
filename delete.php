@@ -1,9 +1,17 @@
 <?php
 	try {
 		$id = $_POST["id"];
-		$sql = "delete from userinfo where id=" .$id;
+
+		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
+
+		// userinfoテーブルから該当するidのユーザーを削除
+		$sql = "delete from userinfo where id=" .$id;
+
+		// クエリの実行
 		$result = mysqli_query($db, $sql);
+
+		// データベースとの接続解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';

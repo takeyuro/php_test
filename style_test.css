@@ -24,9 +24,11 @@
 }
 
 .start {
-	text-align:left;
+	text-align:center;
 	padding:35px 20px 35px 20px;
-	margin:50px auto 0 auto;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50%;
 	display:block;
 }
@@ -36,6 +38,13 @@
 	padding:35px 20px 35px 20px;
 	margin:50px auto 60px auto;
 	width: 40%;
+}
+
+.froats_index {
+	width: 60%;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .label_insert {
@@ -90,8 +99,12 @@
 }
 
 .start_index {
-	margin:10px auto 30px 75px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
 }
+
 
 .submit_index {
 	border:solid 2px #f3f3f3;
@@ -100,7 +113,8 @@
 	font-size:23px;
 	text-align:center;
 	padding: 8px;
-	margin:10px auto 30px 295px;
+	margin-top: 10px;
+	margin-bottom: 50px;
 }
 
 .submit_index:hover {
@@ -109,6 +123,7 @@
 
 .link_index {
 	text-decoration:none;
+	font-size:21px;
 }
 
 .start_nyuuryoku {
@@ -118,12 +133,6 @@
 
 #start_nyuuryoku {
 	margin:10px auto 10px auto;
-}	
-
-.start_link {
-	margin:20px 400px 0 400px;
-	text-align:right;
-	font-size:21px;
 }
 
 .insert_hissu {
@@ -282,6 +291,11 @@
 	margin-top:18px;
 	color:white;
 	text-decoration:none;
+}
+
+.osirase_link_toppage:hover {
+	background-color:#e9546b;
+	color:white;
 }
 
 .osusume_toppage {

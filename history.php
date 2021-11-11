@@ -3,7 +3,7 @@
 	try {
 		if (!empty($_SESSION["total"])) {
 			$db = mysqli_connect("localhost","root","admin","user");
-			$sql = "select date,SUM(price) from sold where user_name='" .$_SESSION["name"]. "' and '" .$_SESSION["total"]. "' group by date";
+			$sql = "select date,SUM(price) from sold where user_name='" .$_SESSION["name"]. "' group by date";
 			$result = mysqli_query($db,$sql);
 			mysqli_close($db);
 		}
@@ -47,7 +47,7 @@
 		?>
 		<ul class="navi">
 			<li><a href="mypage.php">トップページ</a></li>
-			<li><a href="menu.php">メニュー検索</a></li>
+			<li><a href="menu.php">メニュー</a></li>
 			<li><a href="history.php">購入履歴</a></li>
 		</ul>
 		<?php
