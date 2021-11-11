@@ -4,8 +4,8 @@
 		$email = $_SESSION["email"];
 		$password = $_SESSION["password"];
 	} else {
-			$email = $_POST["email"];
-			$password = $_POST["password"];
+		$email = $_POST["email"];
+		$password = $_POST["password"];
 	}
 	$email = htmlspecialchars($email,ENT_QUOTES,'UTF-8');
 	$password = htmlspecialchars($password,ENT_QUOTES,'UTF-8');
@@ -40,8 +40,8 @@
 		// データベースとの接続を解除
 		mysqli_close($db);
 	} catch  (Exception $e) {
-			echo 'ただいま障害により大変ご迷惑をおかけしております。';
-			exit();
+		echo 'ただいま障害により大変ご迷惑をおかけしております。';
+		exit();
 	}
 	try {
 		// データベースに接続
