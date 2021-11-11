@@ -54,9 +54,6 @@
 	<body>
 		<div class="flex_toppage">
 			<div class="header_mypage">
-				<p><a href="toiawase.php">お問い合わせ</a></p>
-			</div>
-			<div class="header_mypage">
 				<p><a href="detail.php">ユーザー情報の変更・削除</a></p>
 			</div>
 			<div class="header_mypage2">

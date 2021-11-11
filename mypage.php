@@ -35,7 +35,6 @@
 				$_SESSION["password"] = $password;
 				$_SESSION["name"] = $name;
 			}
-
 		}
 
 		// データベースとの接続を解除
@@ -72,9 +71,6 @@
 			try {
 				if ($loginFlug) {
 					echo '<div class="flex_toppage">';
-						echo '<div class="header_mypage">';
-							echo '<p><a href="toiawase.php">お問い合わせ</a></p>';
-						echo '</div>';
 						echo '<div class="header_mypage">';
 							echo '<p><a href="detail.php">ユーザー情報の変更・削除</a></p>';
 						echo '</div>';
