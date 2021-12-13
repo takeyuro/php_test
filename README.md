@@ -9,8 +9,8 @@ ECサイトのモデルとして、今回は私が好きなマクドナルドさ
 
 ## 使用言語・DB・OS
   - 使用言語：PHP 7.2.34
-  - 開発環境：XAMPP 7.4.4-2
-  - DB：MariaDBS
+  - 開発環境：XAMPP 7.4.4
+  - DB：MariaDB
   - OS：MacOS  
  
  <br>
