@@ -2,9 +2,17 @@
 	session_start();
 	try {
 		if (!empty($_SESSION["total"])) {
+
+			// データベースに接続
 			$db = mysqli_connect("localhost","root","admin","user");
+
+			// soldテーブルから該当するユーザーの購入日時と日にちごとの合計金額を取り出す
 			$sql = "select date,SUM(price) from sold where user_name='" .$_SESSION["name"]. "' group by date";
+
+			// クエリの実行
 			$result = mysqli_query($db,$sql);
+
+			// データベースとの接続解除
 			mysqli_close($db);
 		}
 	} catch  (Exception $e) {
@@ -12,9 +20,17 @@
 		exit();
 	}
 	try {
+
+		// データベースに接続
 		$db_2 = mysqli_connect("localhost","root","admin","user");
+
+		// soldテーブルから該当するユーザーの購入履歴を取り出す。
 		$sql_2 = "select * from sold where user_name ='" .$_SESSION["name"]. "'";
+
+		// クエリの実行
 		$result_2 = mysqli_query($db_2,$sql_2);
+
+		// データベースとの接続解除
 		mysqli_close($db_2);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';

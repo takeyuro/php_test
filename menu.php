@@ -1,34 +1,40 @@
 <?php
 	session_start();
 	try {
+
+		// 検索情報が無い場合
 		if (empty($_POST["search"]) && empty($_POST["value_low"]) && empty($_POST["value_high"])) {
-			// 検索情報がなければ全ての商品を表示
+			
+			// puroductテーブルから全ての商品のデータを取得する
 			$sql = "select * from product";
+
+		// 価格帯のみが入力されていた場合
 		} else if (empty($_POST["search"])) {
-			// 価格帯のみが入力されていた場合は該当する価格帯の範囲内全ての商品を表示
 			$value_low = $_POST["value_low"];
 			$value_high = $_POST["value_high"];
-		
-			$value_low = htmlspecialchars($value_low,ENT_QUOTES,'UTF-8');
-			$value_high = htmlspecialchars($value_high,ENT_QUOTES,'UTF-8');
-			
+
+			// puroductテーブルから該当する価格帯の範囲内全ての商品データを取得する
 			$sql = "select * from product where price >='" .$value_low. "' and price <= '" .$value_high. "'";
+
+		// テキスト欄のみが入力されていた場合
 		} else if (empty($_POST["value_low"]) && empty($_POST["value_high"])) {
-			// テキスト欄のみが入力されていた場合は該当するジャンルや名前の商品を表示する。
 			$search = $_POST["search"];
+
 			$search = htmlspecialchars($search,ENT_QUOTES,'UTF-8');
+
+			// puroductテーブルから該当するジャンルや名前の商品データを取得する
 			// 部分一致機能を入れているため、1文字だけ入力してもそれに該当する商品が表示される。例えば、「た」と入力するだけで「てりたま」などが表示される。
 			$sql = "select * from product where name='" .$search. "' or genre1='" .$search. "' or genre2='" .$search. "' or name like '%" .$search. "%'";
+
+		// テキスト欄と価格帯の両方に入力があった場合
 		} else {
-			// テキスト欄と価格帯の両方に入力があった場合は該当する商品名やジャンル且つ価格帯の範囲内である商品を表示する。
 			$search = $_POST["search"];
 			$value_low = $_POST["value_low"];
 			$value_high = $_POST["value_high"];
 		
 			$search = htmlspecialchars($search,ENT_QUOTES,'UTF-8');
-			$value_low = htmlspecialchars($value_low,ENT_QUOTES,'UTF-8');
-			$value_high = htmlspecialchars($value_high,ENT_QUOTES,'UTF-8');
 			
+			// 該当する商品名やジャンル且つ価格帯の範囲内である商品データを取得する
 			$sql = "select * from product where name='" .$search. "' or genre1='" .$search. "' or genre2='" .$search. "' or name like '%" .$search. "%' and price >='" .$value_low. "' and price <= '" .$value_high. "'";
 		}
 

@@ -15,16 +15,6 @@
 		$genre2 = $_POST["genre2"];
 		$code = $_POST["id"];
 		
-		$photo = htmlspecialchars($photo,ENT_QUOTES,'UTF-8');
-		$name = htmlspecialchars($name,ENT_QUOTES,'UTF-8');
-		$number = htmlspecialchars($number,ENT_QUOTES,'UTF-8');
-		$price = htmlspecialchars($price,ENT_QUOTES,'UTF-8');
-		$user_name = htmlspecialchars($user_name,ENT_QUOTES,'UTF-8');
-		$date = htmlspecialchars($date,ENT_QUOTES,'UTF-8');
-		$date_2 = htmlspecialchars($date_2,ENT_QUOTES,'UTF-8');
-		$genre2 = htmlspecialchars($genre2,ENT_QUOTES,'UTF-8');
-		$code = htmlspecialchars($code,ENT_QUOTES,'UTF-8');
-		
 		// データベースに接続
 		$db = mysqli_connect("localhost","root","admin","user");
 

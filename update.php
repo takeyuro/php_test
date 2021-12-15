@@ -12,8 +12,6 @@
 		$name = htmlspecialchars($name,ENT_QUOTES,'UTF-8');
 		$email = htmlspecialchars($email,ENT_QUOTES,'UTF-8');
 		$password = htmlspecialchars($password,ENT_QUOTES,'UTF-8');
-		$area = htmlspecialchars($area,ENT_QUOTES,'UTF-8');
-		$gender = htmlspecialchars($gender,ENT_QUOTES,'UTF-8');
 		$old = htmlspecialchars($old,ENT_QUOTES,'UTF-8');
 		$memo = htmlspecialchars($memo,ENT_QUOTES,'UTF-8');
 		

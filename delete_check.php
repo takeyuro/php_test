@@ -1,7 +1,5 @@
 <?php
 	$id = $_POST["id"];
-
-	$id = htmlspecialchars($id,ENT_QUOTES,'UTF-8');
 ?>
 <!DOCTYPE html>
 <html>
