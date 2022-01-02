@@ -1,6 +1,5 @@
 <?php
 	try {
-        // Modelを使えるようにする
         require_once('../Model/user.php');
 
 		$name =  $_POST["name"];

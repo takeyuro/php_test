@@ -42,6 +42,13 @@
         $result = dbConnect($sql);
     }
 
+    function idCheck ($id) {
+        // ID がちゃんと渡ってきているかチェック
+        if (!isset($id) || empty($id)) {
+            die('idがありません');
+        }
+    }   
+
     function passwordHash($password) {
 
         // パスワードをハッシュ化

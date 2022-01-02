@@ -20,7 +20,7 @@
 		if ($id === 0) {
 			die("ログインに失敗しました");
 		} else {
-			header ('Location:../view/mypage.php?='. $id);
+			header ('Location:../View/mypage.php?id='.$id);
 			exit();
 		}
 
