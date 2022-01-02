@@ -8,7 +8,7 @@
 	<body>
 		<h1 class="title">バーガークイーンへようこそ</h1>
 		<div class="start">
-			<form action="mypage.php" method="post">
+			<form action="Controller/loginController.php" method="post">
 				<div class="start_index">
 					<label for="email" class="label_index">Eメールアドレス<br></label>
 					<input type="text" id="email" name="email" class="text_index" placeholder="例）aaa@xxx.com" required><br>

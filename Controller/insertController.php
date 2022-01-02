@@ -1,7 +1,6 @@
 <?php
 	try {
         // Modelを使えるようにする
-        require_once('../Model/db.php');
         require_once('../Model/user.php');
 
 		$name =  $_POST["name"];
@@ -21,17 +20,8 @@
 		// パスワードをハッシュ化する関数を呼び出す
 		$password_hash = passwordHash($password);
 		
-		//データベースに接続する関数を呼び出す
-		$db = dbConnect();
-
 		// 送られてきたユーザー情報をuserinfoテーブルに登録する関数を呼び出す
-		$sql = insert($name, $email, $password_hash, $area, $gender, $old, $memo);
-		
-		// クエリを実行する関数を呼び出す
-		$result = dbQuery($db, $sql);
-
-		// データベースとの接続解除
-		dbClose($db);
+		insert($name, $email, $password_hash, $area, $gender, $old, $memo);
 
         header ('Location:../view/insertComplete.php');
         exit();

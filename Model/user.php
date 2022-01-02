@@ -1,4 +1,6 @@
 <?php
+    require_once('db.php');
+
     function insert($name, $email, $password, $area, $gender, $old, $memo) {
 
         // 送られてきたユーザー情報をuserinfoテーブルに登録
@@ -6,11 +8,8 @@
 		('" .$name. "','" .$email. "','" .$password. "','" .$area. "',
 		'" .$gender. "'," .$old. ",'" .$memo. "')";
 
-        return $sql;
+        $result = dbProcess($sql);
     }
-
-    
-
 
     function passwordHash($password) {
 
