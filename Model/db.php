@@ -1,6 +1,6 @@
 <?php
 
-    function dbProcess($sql) {
+    function dbConnect($sql) {
 
         //データベースに接続
         $db = mysqli_connect("localhost","root","admin","user");
