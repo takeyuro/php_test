@@ -2,6 +2,10 @@
     require_once('db.php');
 
     function loginCheck($email, $password) {
+
+            // ユーザーIDの初期値を設定
+            $id = 0;
+
             // 取得したemailに該当するユーザー情報をテーブルから取得する関数を呼び出す
             $sql = "select * from userinfo where email='" .$email. "'";
     
@@ -19,7 +23,12 @@
                 }
             }
 
-            return $loginFlug;
+            // 指定したemailとpasswordが一致していればユーザーIDを与える
+            if ($loginFlug) {
+                $id = $data["id"];
+            }
+
+            return $id;
     
     }
 
