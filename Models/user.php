@@ -43,7 +43,7 @@
         $result = dbConnect($sql);
     }
 
-    function idCheck ($id) {
+    function checkId ($id) {
 
         // ID がちゃんと渡ってきているかチェック
         if (!isset($id) || empty($id)) {

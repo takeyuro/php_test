@@ -4,7 +4,7 @@
         require_once('../Models/product.php');
 
         // idが正常に渡ってきているかチェック
-        idCheck($_GET["id"]);
+        checkId($_GET["id"]);
 
         $id = intval($_GET["id"]);
 
