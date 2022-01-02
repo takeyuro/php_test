@@ -1,5 +1,4 @@
 <?php
-    require_once('../Model/db.php');
     require_once('../Model/user.php');
 
     valueCheck($_POST['email'], $_POST['password']);

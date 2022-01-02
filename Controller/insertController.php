@@ -23,8 +23,8 @@
 		// 送られてきたユーザー情報をuserinfoテーブルに登録する関数を呼び出す
 		insert($name, $email, $password_hash, $area, $gender, $old, $memo);
 
-        // header ('Location:../view/insertComplete.php');
-        // exit();
+        header ('Location:../view/insertComplete.php');
+        exit();
 
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
