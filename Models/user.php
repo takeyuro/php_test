@@ -6,9 +6,10 @@
             // ユーザーIDの初期値を設定
             $id = 0;
 
-            // 取得したemailに該当するユーザー情報をテーブルから取得する関数を呼び出す
+            // userinfoテーブルから取得したemailに該当するユーザー情報を取得
             $sql = "select * from userinfo where email='" .$email. "'";
     
+            // DB処理
             $result = dbConnect($sql);
     
             $loginFlug = false;
@@ -43,11 +44,24 @@
     }
 
     function idCheck ($id) {
+
         // ID がちゃんと渡ってきているかチェック
         if (!isset($id) || empty($id)) {
             die('idがありません');
         }
-    }   
+    }
+
+    function findName ($id) {
+
+        // userinfoテーブルから該当するidのユーザー名を取得
+        $sql = "select name from userinfo where id=".$id;
+
+        $result = dbConnect($sql);
+
+        $data = mysqli_fetch_assoc($result);
+
+        return $data["name"];
+    }
 
     function passwordHash($password) {
 
