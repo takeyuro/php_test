@@ -26,7 +26,7 @@
 	</head>
 	<body>
 		<?php
-			include('../Controller/detailController.php');
+			include('../Controllers/detailController.php');
 			if ($loginFlug) {
 				echo '<div class="flex_toppage">';
 					echo '<div class="header_mypage">';

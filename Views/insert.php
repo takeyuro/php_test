@@ -7,7 +7,7 @@
 	<body>
 		<h1 class="title">新規会員登録フォーム</h1>
 		<div class="start_insert">
-			<form action="../Controller/insertController.php" method="post">
+			<form action="../Controllers/insertController.php" method="post">
 			<div class="texts_insert">
 				<label for="name" class="label_insert">氏名</label>
 				<label for="name" class="insert_hissu">（必須）<br></label>

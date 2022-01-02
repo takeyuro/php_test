@@ -1,6 +1,6 @@
 <?php
 	try {
-        require_once('../Model/user.php');
+        require_once('../Models/user.php');
 
 		$name =  $_POST["name"];
 		$email = $_POST["email"];
@@ -22,7 +22,7 @@
 		// 送られてきたユーザー情報をuserinfoテーブルに登録する関数を呼び出す
 		insert($name, $email, $password_hash, $area, $gender, $old, $memo);
 
-        header ('Location:../view/insertComplete.php');
+        header ('Location:../Views/insertComplete.php');
         exit();
 
 	} catch  (Exception $e) {

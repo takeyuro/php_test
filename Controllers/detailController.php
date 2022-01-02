@@ -1,5 +1,5 @@
 <?php
-    require_once('../Model/user.php');
+    require_once('../Models/user.php');
 
     idCheck($_GET["id"]);
 
