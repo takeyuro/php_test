@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>マクドナルド非公式サイト</title>
+		<title>簡易ECサイト</title>
 		<link href="style_test.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
