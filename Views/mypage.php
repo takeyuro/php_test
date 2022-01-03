@@ -29,7 +29,7 @@
 			</ul>
 			<h2 class="osirase_toppage">特別なお知らせ</h2>
 			<div class="osirase_link_toppage">
-				<p><a href="osirase.html">新型コロナウイルス感染拡大防止の取り組みとお知らせ　＞</a></p>
+				<p><a href="news.php?id=' .$id. '">新型コロナウイルス感染拡大防止の取り組みとお知らせ　＞</a></p>
 			</div>
 			<h3 class="osusume_toppage">おすすめメニュー</h3>
 			<p class="osusume_sentence_toppage">季節に合ったおすすめのメニューをご紹介します</p>';
