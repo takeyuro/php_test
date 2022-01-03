@@ -1,6 +1,6 @@
 <?php
 	try {
-        require_once('../Models/product.php');
+        require_once('../../Models/product.php');
 
         $search = NULL;
         $value_low = NULL;

@@ -2,18 +2,18 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="../style_test.css" rel="stylesheet" type="text/css">
+		<link href="../css/style_test.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<?php
-			include('../Controllers/nameController.php');
-			include('../Controllers/menuController.php');
+			include('../../Controllers/user/nameController.php');
+			include('../../Controllers/product/menuController.php');
 			echo '<div class="flex_toppage">
 				<div class="header_mypage">
-					<p><a href="detail.php">ユーザー情報の変更・削除</a></p>
+					<p><a href="../user/edit.php?id=' .$id. '">ユーザー情報の変更・削除</a></p>
 				</div>
 				<div class="header_mypage2">
-					<p><a href="index.php">ログアウト</a></p>
+					<p><a href="../../index.php">ログアウト</a></p>
 				</div>
 			</div>
 			<div>

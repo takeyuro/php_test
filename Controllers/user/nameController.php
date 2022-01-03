@@ -1,6 +1,6 @@
 <?php
     try {
-        require_once('../Models/user.php');
+        require_once('../../Models/user.php');
 
         // idが正常に渡ってきているかチェック
         // checkId($_GET["id"]);

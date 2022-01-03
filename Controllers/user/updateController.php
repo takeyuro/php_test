@@ -1,7 +1,8 @@
 <?php
 	try {
-        require_once('../Models/user.php');
+		require_once('../../Models/user.php');
 
+		$id =  $_GET["id"];
 		$name =  $_POST["name"];
 		$email = $_POST["email"];
 		$password = $_POST["password"];
@@ -16,13 +17,13 @@
 		$old = htmlspecialchars($old,ENT_QUOTES,'UTF-8');
 		$memo = htmlspecialchars($memo,ENT_QUOTES,'UTF-8');
 		
-		// パスワードをハッシュ化する関数を呼び出す
+		// パスワードをハッシュ化
 		$password_hash = passwordHash($password);
 		
-		// 送られてきたユーザー情報をuserinfoテーブルに登録する関数を呼び出す
-		insert($name, $email, $password_hash, $area, $gender, $old, $memo);
+		// ユーザー情報を更新
+		update($id, $name, $email, $password_hash, $area, $gender, $old, $memo);
 
-        header ('Location:../Views/insertComplete.php');
+		header ('Location:../../Views/user/updateComplete.php');
         exit();
 
 	} catch  (Exception $e) {
