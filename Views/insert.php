@@ -21,7 +21,7 @@
 			<div class="texts_insert">
 				<label for="password" class="label_insert">パスワード</label>
 				<label for="name" class="insert_hissu">（必須）<br></label>
-				<input type="text" id="password" name="password" placeholder="8文字以上12文字以内" minlength="8" maxlength="12" required class="write_insert"><br>
+				<input type="text" id="password" name="password" placeholder="8文字以上15文字以内" minlength="8" maxlength="15" required class="write_insert"><br>
 			</div>
 			<div class="texts_insert">
 				<label for="area" class="label_insert">お住まいの地域<br></label>

@@ -20,7 +20,7 @@
 				echo '</div>';
 				echo '<div class="texts_insert">';
 					echo '<label for="password" class="label_insert">Password<br></label>';
-					echo '<input type="text" id="password" name="password" placeholder="新しく入力してください。" required class="write_insert"><br>';
+					echo '<input type="text" id="password" name="password" placeholder="変更する場合は入力してください。" minlength="8" maxlength="15" class="write_insert"><br>';
 				echo '</div>';
 				echo '<div class="texts_insert">';
 					echo '<label for="area" class="label_insert">お住まいの地域<br></label>';
