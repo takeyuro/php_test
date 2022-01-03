@@ -24,8 +24,8 @@
 			</div>
 			<ul class="navi">
 				<li><a href="mypage.php?id=' .$id. '">トップページ</a></li>
-				<li><a href="menu.php">メニュー</a></li>
-				<li><a href="branch.php">購入履歴</a></li>
+				<li><a href="menu.php?id=' .$id. '">メニュー</a></li>
+				<li><a href="branch.php?id=' .$id. '">購入履歴</a></li>
 			</ul>
 			<h2 class="osirase_toppage">特別なお知らせ</h2>
 			<div class="osirase_link_toppage">
