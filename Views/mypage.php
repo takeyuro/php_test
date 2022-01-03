@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<?php
+			include('../Controllers/nameController.php');
 			include('../Controllers/mypageController.php');
 			echo '<div class="flex_toppage">
 				<div class="header_mypage">
