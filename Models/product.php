@@ -13,6 +13,8 @@
     }
 
 	function show() {
+
+		// puroductテーブルから全ての商品のデータを取得する
 		$sql = "select * from product";
 
 		// DB処理
@@ -22,15 +24,9 @@
 	}
 
     function search($search, $value_low, $value_high) {
-
-        // 検索欄に何も入力されていなかった場合
-		if ($search === NULL && $value_low === NULL && $value_high === NULL) {
-
-			// puroductテーブルから全ての商品のデータを取得する
-			$sql = "select * from product";
 			
 		// 価格帯のみが入力されていた場合
-		} else if ($search === NULL) {
+		if ($search === NULL) {
 
 			// puroductテーブルから該当する価格帯の範囲内全ての商品データを取得する
 			$sql = "select * from product where price >='" .$value_low. "' and price <= '" .$value_high. "'";
