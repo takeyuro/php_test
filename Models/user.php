@@ -43,6 +43,19 @@
         $result = dbConnect($sql);
     }
 
+    function edit($id) {
+
+        // userinfoテーブルから該当するidのユーザー情報を取得
+		$sql = "select * from userinfo where id=" .$id;
+
+        $result = dbConnect($sql);
+
+        // DB処理の結果をにArray型に変換
+        $data = mysqli_fetch_assoc($result);
+
+        return $data;
+    }
+
     function checkId ($id) {
 
         // ID がちゃんと渡ってきているかチェック
@@ -51,7 +64,7 @@
         }
     }
 
-    function findName ($id) {
+    function findName($id) {
 
         // userinfoテーブルから該当するidのユーザー名を取得
         $sql = "select name from userinfo where id=".$id;
