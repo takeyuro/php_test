@@ -21,7 +21,7 @@
 			</form>
 		</div>
 		<div class="froats_index">
-			<a href="view/insert.php" class="link_index">新規会員登録はコチラ</a>
+			<a href="Views/insert.php" class="link_index">新規会員登録はコチラ</a>
 		</div>
 	</body>
 </html>
