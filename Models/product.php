@@ -50,4 +50,18 @@
 
         return $result;
     }
+
+	function detail($id) {
+
+		// 受け取ったidに該当する商品の情報をデータベースから取得
+		$sql = "select * from product where id=" .$id;
+
+		// DB処理
+		$result = dbConnect($sql);
+
+		// DB処理の結果をにArray型に変換
+		$data = mysqli_fetch_assoc($result);
+
+		return $data;
+	}
 ?>

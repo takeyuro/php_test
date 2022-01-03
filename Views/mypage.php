@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div>
-				<img src="http://localhost/test/images_test_6/mcd_00.png" width="100%" height="280">
+				<img src="http://localhost/php_test/images_test_6/mcd_00.png" width="100%" height="280">
 			</div>
 			<h1 class="title_toppage">バーガークイーン公式サイト トップページ</h1>
 			<div class="login_mypage">
@@ -37,7 +37,7 @@
 			
 			// Controllers/mypageController.phpで取得した商品情報を表示
 			while ($data = mysqli_fetch_assoc($result)) {
-				echo '<form action="menu_check.php" method="post">';
+				echo '<form action="menuDetail.php?id=' .$id. '" method="post">';
 					echo '<div class="flex_menu">
 						<div class="flexbox_toppage">
 							<div class="flex_toppage">
@@ -50,7 +50,7 @@
 										<p>¥ ' .$data["price"]. '</p>
 									</div>
 									<div class="link_mypage">
-										<input type="hidden" name="id" value=' .$data["id"]. '>
+										<input type="hidden" name="productId" value=' .$data["id"]. '>
 										<input type="submit" value="詳細" class="submit_mypage">
 									</div>
 								</div>
