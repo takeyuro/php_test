@@ -12,6 +12,15 @@
         return $result;
     }
 
+	function show() {
+		$sql = "select * from product";
+
+		// DB処理
+        $result = dbConnect($sql);
+
+		return $result;
+	}
+
     function search($search, $value_low, $value_high) {
 
         // 検索欄に何も入力されていなかった場合
