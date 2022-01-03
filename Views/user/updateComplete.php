@@ -7,7 +7,7 @@
 	<body>
 		<div class="insert_complete">
 			<form action="../../index.php">
-				<img src="http://localhost/php_test/images_test_6/mcd_21.png">
+				<img src="http://localhost/php_test/images/mcd_21.png">
 				<p>アカウントの更新が完了しました。</p>
 				<input type="submit" value="ログインページへ" class="submit_update">
 			</form>

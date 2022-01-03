@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div class="insert_complete">
-			<img src="http://localhost/php_test/images_test_6/mcd_22.png">
+			<img src="http://localhost/php_test/images/mcd_22.png">
 			<p>本当にこのアカウントを削除しますか？</p>
 			<?php
 				echo '<div>

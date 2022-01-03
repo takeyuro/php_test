@@ -17,7 +17,7 @@
 				</div>
 			</div>
 			<div>
-				<img src="http://localhost/php_test/images_test_6/mcd_00.png" width="100%" height="280">
+				<img src="http://localhost/php_test/images/mcd_00.png" width="100%" height="280">
 			</div>
 			<h1 class="title_toppage">バーガークイーン公式サイト トップページ</h1>
 			<div class="login_mypage">
