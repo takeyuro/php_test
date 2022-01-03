@@ -3,33 +3,33 @@
 
     function loginCheck($email, $password) {
 
-            // ユーザーIDの初期値を設定
-            $id = 0;
+        // ユーザーIDの初期値を設定
+        $id = 0;
 
-            // userinfoテーブルから取得したemailに該当するユーザー情報を取得
-            $sql = "select * from userinfo where email='" .$email. "'";
-    
-            // DB処理
-            $result = dbConnect($sql);
-    
-            $loginFlug = false;
-    
-            // $resultに格納されているmysqli_query関数の結果をArrey型に変換し、While文でレコードを取得
-            while ($data = mysqli_fetch_assoc($result)) {
-    
-                // ハッシュ化されているパスワードを元の値に戻し、入力されたパスワードと一致していればログイン処理を行う
-                if (password_verify($password,$data["password"])) {
-                    $loginFlug = true;
-                    break;
-                }
+        // userinfoテーブルから取得したemailに該当するユーザー情報を取得
+        $sql = "select * from userinfo where email='" .$email. "'";
+
+        // DB処理
+        $result = dbConnect($sql);
+
+        $loginFlug = false;
+
+        // $resultに格納されているmysqli_query関数の結果をArrey型に変換し、While文でレコードを取得
+        while ($data = mysqli_fetch_assoc($result)) {
+
+            // ハッシュ化されているパスワードを元の値に戻し、入力されたパスワードと一致していればログイン処理を行う
+            if (password_verify($password,$data["password"])) {
+                $loginFlug = true;
+                break;
             }
+        }
 
-            // 指定したemailとpasswordが一致していればユーザーIDを与える
-            if ($loginFlug) {
-                $id = $data["id"];
-            }
+        // 指定したemailとpasswordが一致していればユーザーIDを与える
+        if ($loginFlug) {
+            $id = $data["id"];
+        }
 
-            return $id;
+        return $id;
     
     }
 
@@ -58,6 +58,7 @@
 
         $result = dbConnect($sql);
 
+        // DB処理の結果をにArray型に変換
         $data = mysqli_fetch_assoc($result);
 
         return $data["name"];
