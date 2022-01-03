@@ -9,7 +9,7 @@
 		<?php
 			include('../Controllers/editController.php');
 			echo '<div class="start_insert">
-				<form action="update.php" method="post">
+				<form action="../Controllers/updateController.php?id=' .$id. '" method="post">
 				<div class="texts_insert">
 					<label for="name" class="label_insert">名前<br></label>
 					<input type="text" id="name" name="name" value="' .$data["name"]. '" required class="write_insert"><br>
@@ -20,7 +20,7 @@
 				</div>
 				<div class="texts_insert">
 					<label for="password" class="label_insert">Password<br></label>
-					<input type="text" id="password" name="password" placeholder="変更する場合は入力してください。" minlength="8" maxlength="15" class="write_insert"><br>
+					<input type="text" id="password" name="password" placeholder="変更する場合は入力してください。" minlength="8" maxlength="15" required class="write_insert"><br>
 				</div>
 				<div class="texts_insert">
 					<label for="area" class="label_insert">お住まいの地域<br></label>';
@@ -56,7 +56,6 @@
 				<div class="texts_insert">
 					<label for="memo" class="label_insert">メモ<br></label>
 					<textarea name="memo" rows="4" cols="20" maxlength="100" class="memo_insert">' .$data["memo"]. '</textarea><br>
-					<input type="hidden" name="id" value="' .$id. '">
 				</div>
 				<div class="texts_insert">
 					<input type="submit" value="更新" class="submit_insert">
