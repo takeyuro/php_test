@@ -18,10 +18,10 @@
 		$memo = htmlspecialchars($memo,ENT_QUOTES,'UTF-8');
 		
 		// パスワードをハッシュ化
-		$password = password_hash($password,PASSWORD_DEFAULT);
+		$password_hash = passwordHash($password);
 		
 		// ユーザー情報を更新
-		update($id, $name, $email, $password, $area, $gender, $old, $memo);
+		update($id, $name, $email, $password_hash, $area, $gender, $old, $memo);
 
 		header ('Location:../Views/updateComplete.php');
         exit();
