@@ -56,6 +56,18 @@
         return $data;
     }
 
+    function update($id, $name, $email, $password, $area, $gender, $old, $memo) {
+
+		// 送られてきたユーザー情報をuserinfoテーブルに更新
+		$sql = "update userinfo set
+		name='" .$name. "',email='" .$email. "', password='" .$password. "',
+		area='" .$area. "',gender='" .$gender. "', old=" .$old. ",
+		memo='" .$memo. "' where id=" .$id;
+		
+        //DB処理
+		$result = dbConnect($sql);
+    }
+
     function checkId ($id) {
 
         // ID がちゃんと渡ってきているかチェック
