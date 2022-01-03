@@ -68,6 +68,14 @@
 		$result = dbConnect($sql);
     }
 
+    function destroy($id) {
+
+        // userinfoテーブルから該当するidのユーザーを削除
+		$sql = "delete from userinfo where id=" .$id;
+
+        $result = dbConnect($sql);
+    }
+
     function checkId ($id) {
 
         // ID がちゃんと渡ってきているかチェック

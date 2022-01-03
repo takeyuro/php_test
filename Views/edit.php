@@ -61,14 +61,15 @@
 					<input type="submit" value="更新" class="submit_insert">
 				</div>
 				<div class="texts_insert">
-					<input type="button" onclick="history.back()" value="キャンセル" class="submit_insert">
+					<button class="detailCancel">
+						<a href="mypage.php?id=' .$_GET["id"]. '" class="detail_cancel">キャンセル</a>
+					</button>
 				</div>
 				</form>
 				<div class="sakujo_detail">
-					<form action="delete_check.php" method="post">
-						<input type="hidden" name="id" value="' .$id. '">
-						<input type="submit" value="削除" class="sakujo_detail_2">
-					</form>
+						<button class="sakujo_detail_2">
+							<a href="deleteCheck.php?id=' .$id. '" class="sakujo_detail_button">削除</a>
+						</button>
 				</div>
 			</div>';
 		?>
