@@ -696,3 +696,8 @@
 	padding: 8px;
 	margin:18px 41px 0px 100px;
 }
+
+.sellComplete_button {
+	color:white;
+	text-decoration: none;
+}

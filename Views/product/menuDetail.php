@@ -21,7 +21,7 @@
 				<li><a href="branch.php?id=' .$id. '">購入履歴</a></li>
 			</ul>
 			<div class="main_menu_check">
-				<form action="menu_complete.php" method="post">
+				<form action="../../Controllers/product/sellController.php?id=' .$id. '" method="post">
 					<img src="' .$data["photo"]. '" width="370" height="350">
 					<h2>' .$data["name"]. '</h2>
 					<p>¥ ' .$data["price"]. '</p>
@@ -35,11 +35,11 @@
 							}
 						echo '</select>
 					</div>
+					<input type="hidden" name="productId" value="' .$data["id"]. '">
 					<input type="hidden" name="photo" value="' .$data["photo"]. '">
 					<input type="hidden" name="name" value="' .$data["name"]. '">
 					<input type="hidden" name="price" value="' .$data["price"]. '">
 					<input type="hidden" name="genre2" value="' .$data["genre2"]. '">
-					<input type="hidden" name="id" value="' .$data["id"]. '">
 					<input type="submit" value="購入する" class="submit_menu_check">
 					<input type="button" onclick="history.back()" value="キャンセル" class="button_menu_check">
 				</form>

@@ -2,9 +2,9 @@
 	try {
         require_once('../../Models/product.php');
 
-		$id = intval($_POST["productId"]);
+		$productId = intval($_POST["productId"]);
 
-		$data = detail($id);
+		$data = detail($productId);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
 		exit();

@@ -64,7 +64,6 @@
 		area='" .$area. "',gender='" .$gender. "', old=" .$old. ",
 		memo='" .$memo. "' where id=" .$id;
 		
-        //DB処理
 		$result = dbConnect($sql);
     }
 
