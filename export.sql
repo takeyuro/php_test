@@ -62,6 +62,7 @@ CREATE TABLE `sold` (
   `date_2` char(20) DEFAULT NULL,
   `genre2` char(10) DEFAULT NULL,
   `code` int(11) DEFAULT NULL,
+  `userId` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -72,7 +73,7 @@ CREATE TABLE `sold` (
 
 LOCK TABLES `sold` WRITE;
 /*!40000 ALTER TABLE `sold` DISABLE KEYS */;
-INSERT INTO `sold` VALUES (1,'http://localhost/php_test/images/mcd_09.png','てりやきチキンフィレオ セット',1,670,'浜辺美波','2021-04-29','2021-04-29 19:44:08','ハンバーガー',9),(2,'http://localhost/php_test/images/mcd_18.png','ホットコーヒー',2,300,'浜辺美波','2021-04-29','2021-04-29 19:47:08','ドリンク',18),(3,'http://localhost/php_test/images/mcd_06.png','チーズてりたま',1,390,'山田太郎','2021-04-29','2021-04-29 22:32:24','ハンバーガー',6),(4,'http://localhost/php_test/images/mcd_15.png','ソフトツイスト',1,100,'朝倉未来','2021-04-29','2021-04-29 22:37:45','スイーツ',15),(5,'http://localhost/php_test/images/mcd_15.png','ソフトツイスト',1,100,'朝倉未来','2021-04-29','2021-04-29 22:37:59','スイーツ',15),(6,'http://localhost/php_test/images/mcd_03.png','倍ビックマック',5,2450,'山田太郎','2021-04-29','2021-04-29 22:40:29','ハンバーガー',3),(7,'http://localhost/php_test/images/mcd_14.png','マックフルーリー',1,240,'zorn','2021-04-29','2021-04-29 22:41:53','スイーツ',14),(8,'http://localhost/php_test/images/mcd_15.png','ソフトツイスト',5,500,'zorn','2021-04-29','2021-04-29 22:49:58','スイーツ',15),(9,'http://localhost/php_test/images/mcd_17.png','オレンジジュース',1,150,'zorn','2021-04-29','2021-04-29 23:00:19','ドリンク',17),(10,'http://localhost/php_test/images/mcd_12.png','フライドポテト',4,800,'アイウエオ','2021-04-29','2021-04-29 23:01:32','サイドメニュー',12),(11,'http://localhost/php_test/images/mcd_07.png','チキンクリスプ',1,110,'sum','2021-04-29','2021-04-29 23:12:15','ハンバーガー',7),(12,'http://localhost/php_test/images/mcd_07.png','チキンクリスプ',1,110,'sum','2021-04-29','2021-04-29 23:12:23','ハンバーガー',7),(13,'http://localhost/php_test/images/mcd_11.png','ハッピーセット',1,500,'sum','2021-04-29','2021-04-29 23:12:32','ハンバーガー',11),(14,'http://localhost/php_test/images/mcd_19.png','ファンタ グレープ',1,150,'アイウエオn','2021-04-29','2021-04-29 23:13:59','ドリンク',19),(15,'http://localhost/php_test/images/mcd_12.png','フライドポテト',4,800,'アイウエオn','2021-04-29','2021-04-29 23:14:11','サイドメニュー',12),(16,'http://localhost/php_test/images/mcd_02.png','ごはんベーコンレタス',1,410,'アイウエオn','2021-04-29','2021-04-29 23:15:11','ハンバーガー',2),(17,'http://localhost/php_test/images/mcd_16.png','コカ・コーラ',1,150,'浜辺美波','2021-04-30','2021-04-30 01:45:28','ドリンク',16);
+INSERT INTO `sold` VALUES (1,'http://localhost/php_test/images/mcd_09.png','てりやきチキンフィレオ セット',1,670,'浜辺美波','2021-04-29','2021-04-29 19:44:08','ハンバーガー',9,2),(2,'http://localhost/php_test/images/mcd_18.png','ホットコーヒー',2,300,'浜辺美波','2021-04-29','2021-04-29 19:47:08','ドリンク',18,2),(3,'http://localhost/php_test/images/mcd_06.png','チーズてりたま',1,390,'山田太郎','2021-04-29','2021-04-29 22:32:24','ハンバーガー',6,1);
 /*!40000 ALTER TABLE `sold` ENABLE KEYS */;
 UNLOCK TABLES;
 
