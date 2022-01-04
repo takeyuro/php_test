@@ -5,7 +5,7 @@
 		date_default_timezone_set('Asia/Tokyo');
 
         require_once('../../Models/user.php');
-        require_once('../../Models/sell.php');
+        require_once('../../Models/sold.php');
 		
         $code = $_POST["productId"];
 		$photo = $_POST["photo"];
@@ -20,7 +20,7 @@
         // ユーザー名を取得
         $userName = findName($userId);
 
-		sold($photo ,$name ,$number ,$price ,$userName ,$date ,$date_2 ,$genre2 ,$code ,$userId);
+		sell($photo ,$name ,$number ,$price ,$userName ,$date ,$date_2 ,$genre2 ,$code ,$userId);
 		
 		date_default_timezone_set($org_timezone);
 
