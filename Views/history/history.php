@@ -48,11 +48,11 @@
 						echo '<p>購入日時　 ' .$data["date_2"]. '</p>';
 					echo '</div>';
 					echo '<div class="flexbox2_history">';
-						echo'<form action="menu_check.php" method="post">';
+						echo'<form action="../product/menuDetail.php?id=' .$id. '" method="post">';
 							echo '<input type="submit" value="再度購入する" class="retry_history">';
-							echo '<input type="hidden" name="id" value="' .$data["code"]. '">';
+							echo '<input type="hidden" name="productId" value="' .$data["code"]. '">';
 						echo '</form>';
-						echo'<form action="menu.php" method="post">';
+						echo'<form action="../product/menu.php?id=' .$id. '" method="post">';
 							echo '<input type="submit" value="関連商品を見る" class="retry2_history">';
 							echo '<input type="hidden" name="search" value="' .$data["genre2"]. '">';
 						echo '</form>';
