@@ -1,5 +1,4 @@
 <?php
-
     function dbConnect($sql) {
 
         //データベースに接続

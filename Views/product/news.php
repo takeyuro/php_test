@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="../style_test.css" rel="stylesheet" type="text/css">
+		<link href="../css/style_test.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<h1 class="title_osirase">新型コロナウイルス感染拡大防止の取り組みとお知らせ</h1>

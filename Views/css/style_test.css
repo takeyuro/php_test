@@ -1,4 +1,4 @@
-@charset="UTF-8";
+@charset "UTF-8";
 
 .title {
 	margin:50px 0 100px 0;
@@ -695,4 +695,9 @@
 	height:43px;
 	padding: 8px;
 	margin:18px 41px 0px 100px;
+}
+
+.sellComplete_button {
+	color:white;
+	text-decoration: none;
 }

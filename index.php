@@ -3,12 +3,12 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>簡易ECサイト</title>
-		<link href="style_test.css" rel="stylesheet" type="text/css">
+		<link href="Views/css/style_test.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<h1 class="title">バーガークイーンへようこそ</h1>
 		<div class="start">
-			<form action="Controllers/loginController.php" method="post">
+			<form action="Controllers/user/loginController.php" method="post">
 				<div class="start_index">
 					<label for="email" class="label_index">Eメールアドレス<br></label>
 					<input type="text" id="email" name="email" class="text_index" placeholder="例）aaa@xxx.com" required><br>
@@ -21,7 +21,7 @@
 			</form>
 		</div>
 		<div class="froats_index">
-			<a href="Views/insert.php" class="link_index">新規会員登録はコチラ</a>
+			<a href="Views/user/insert.php" class="link_index">新規会員登録はコチラ</a>
 		</div>
 	</body>
 </html>

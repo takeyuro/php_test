@@ -1,6 +1,6 @@
 <?php
 	try {
-		require_once('../Models/user.php');
+		require_once('../../Models/user.php');
 
 		if (empty($_POST['email']) || !isset($_POST['email'])) {
 			die("emailがありません");
@@ -20,7 +20,7 @@
 		if ($id === 0) {
 			die("ログインに失敗しました");
 		} else {
-			header ('Location:../Views/mypage.php?id='.$id);
+			header ('Location:../../Views/product/mypage.php?id='.$id);
 			exit();
 		}
 

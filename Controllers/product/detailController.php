@@ -1,12 +1,10 @@
 <?php
 	try {
-        require_once('../Models/user.php');
+        require_once('../../Models/product.php');
 
-		$id = intval($_GET["id"]);
+		$productId = intval($_POST["productId"]);
 
-		// クエリの実行
-		$data = edit($id);
-        
+		$data = detail($productId);
 	} catch  (Exception $e) {
 		echo 'ただいま障害により大変ご迷惑をおかけしております。';
 		exit();
