@@ -20,4 +20,24 @@
 
 		return $result;
 	}
+
+	function getDate($userId) {
+
+		// soldテーブルから該当するユーザーの購入日時を取り出す
+		$sql = "select date from sold where userId='" .$userId. "'";
+
+		$result = dbConnect($sql);
+
+		return $result;
+	}
+
+	function getTotal($userId) {
+		
+		// soldテーブルから該当するユーザーの購入日時と日にちごとの合計金額を取り出す
+		$sql = "select date,SUM(price) from sold where userId='" .$userId. "' group by date";
+
+		$result = dbConnect($sql);
+
+		return $result;
+	}
 ?>
