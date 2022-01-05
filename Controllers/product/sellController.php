@@ -5,7 +5,7 @@
 		date_default_timezone_set('Asia/Tokyo');
 
         require_once('../../Models/user.php');
-        require_once('../../Models/sold.php');
+        require_once('../../Models/product.php');
 		
         $code = $_POST["productId"];
 		$photo = $_POST["photo"];

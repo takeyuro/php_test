@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<?php
+			require_once('../../Models/total.php');
 			include('../../Controllers/user/nameController.php');
 			include('../../Controllers/history/historyController.php');
 			echo '<div class="flex_toppage">
@@ -28,45 +29,53 @@
 				<li><a href="../product/menu.php?id=' .$id. '">メニュー</a></li>
 				<li><a href="history.php?id=' .$id. '">購入履歴</a></li>
 			</ul>';
-			// $_SESSION["total"] = array();
+
+			// 購入日を格納する。
+			$lastDate = NULL;
 			while ($data = mysqli_fetch_assoc($result)) {
-				echo "";
-				// if (!empty($_SESSION["total"])) {
-				// 	if ($_SESSION["total"] != $data_2["date"]) {
-				// 		$data_2 = mysqli_fetch_assoc($result_2);
-				// 		echo '<div class="flex_link_history">';
-				// 			echo '<p>購入日時：' .$data["date"]. '<p>';
-				// 			echo '<p>合計購入金額：' .$data["SUM(price)"]. '円</p>';
-				// 		echo '</div>';
-				// 	}
-				// }
-				echo '<div class="flex_history">';
-					echo '<img src="' .$data["photo"]. '" width="220" height="210">';
-					echo '<div class="flexbox_history">';
-						echo '<p id="text_history">' .$data["name"]. '</p>';
-						echo '<p id="price_history">' .$data["number"]. ' 点（¥  '.$data["price"].'）</p>';
-						echo '<p>購入日時　 ' .$data["date_2"]. '</p>';
-					echo '</div>';
-					echo '<div class="flexbox2_history">';
-						echo'<form action="../product/menuDetail.php?id=' .$id. '" method="post">';
-							echo '<input type="submit" value="再度購入する" class="retry_history">';
-							echo '<input type="hidden" name="productId" value="' .$data["code"]. '">';
-						echo '</form>';
-						echo'<form action="../product/menu.php?id=' .$id. '" method="post">';
-							echo '<input type="submit" value="関連商品を見る" class="retry2_history">';
-							echo '<input type="hidden" name="search" value="' .$data["genre2"]. '">';
-						echo '</form>';
-					echo '</div>';
-				echo '</div>';
-				// $_SESSION["total"] = $data_2["date"];
+				if (!empty($lastDate)) {
+
+					// 前回の購入日と今回の購入日が異なる場合、$lastDateの日付とその日の合計金額を表示
+					if ($lastDate != $data["date"]) {
+						$sumData = getTotal($id, $lastDate);
+						$total = mysqli_fetch_assoc($sumData);
+						echo '<div class="flex_link_history">
+							<p>購入日時：' .$total["date"]. '<p>
+							<p>合計購入金額：' .$total["SUM(price)"]. '円</p>
+						</div>';
+					}
+				}
+				echo '<div class="flex_history">
+					<img src="' .$data["photo"]. '" width="220" height="210">
+					<div class="flexbox_history">
+						<p id="text_history">' .$data["name"]. '</p>
+						<p id="price_history">' .$data["number"]. ' 点（¥  '.$data["price"].'）</p>
+						<p>購入日時　 ' .$data["date_2"]. '</p>
+					</div>
+					<div class="flexbox2_history">
+						<form action="../product/menuDetail.php?id=' .$id. '" method="post">
+							<input type="submit" value="再度購入する" class="retry_history">
+							<input type="hidden" name="productId" value="' .$data["code"]. '">
+						</form>
+						<form action="../product/menu.php?id=' .$id. '" method="post">
+							<input type="submit" value="関連商品を見る" class="retry2_history">
+							<input type="hidden" name="search" value="' .$data["genre2"]. '">
+						</form>
+					</div>
+				</div>';
+
+				// 日付を今回のものに入れ替える
+				$lastDate = $data["date"];
 			}
-			// if (!empty($_SESSION["total"])) {
-			// 	$data_2 = mysqli_fetch_assoc($result_2);
-			// 	echo '<div class="flex_link_history">';
-			// 		echo '<p>購入日時：' .$data_2["date"]. '<p>';
-			// 		echo '<p>合計購入金額：' .$data_2["SUM(price)"]. '円</p>';
-			// 	echo '</div>';
-			// }
+			// 最後は前回の購入日と比べずに購入日時と合計金額を表示
+			if (!empty($lastDate)) {
+				$sumData = getTotal($id, $lastDate);
+				$total = mysqli_fetch_assoc($sumData);
+				echo '<div class="flex_link_history">
+					<p>購入日時：' .$total["date"]. '<p>
+					<p>合計購入金額：' .$total["SUM(price)"]. '円</p>
+				</div>';
+			}
 		?>
 	</body>
 </html>
