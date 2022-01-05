@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link href="style_test.css" rel="stylesheet" type="text/css">
+		<link href="../css/style_test.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<h1 class="title">新規会員登録フォーム</h1>
 		<div class="start_insert">
-			<form action="insert_complete.php" method="post">
+			<form action="../../Controllers/user/insertController.php" method="post">
 			<div class="texts_insert">
 				<label for="name" class="label_insert">氏名</label>
 				<label for="name" class="insert_hissu">（必須）<br></label>
@@ -21,7 +21,7 @@
 			<div class="texts_insert">
 				<label for="password" class="label_insert">パスワード</label>
 				<label for="name" class="insert_hissu">（必須）<br></label>
-				<input type="text" id="password" name="password" placeholder="8文字以上12文字以内" minlength="8" maxlength="12" required class="write_insert"><br>
+				<input type="text" id="password" name="password" placeholder="8文字以上15文字以内" minlength="8" maxlength="15" required class="write_insert"><br>
 			</div>
 			<div class="texts_insert">
 				<label for="area" class="label_insert">お住まいの地域<br></label>
