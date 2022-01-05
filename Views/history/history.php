@@ -11,10 +11,10 @@
 			include('../../Controllers/history/historyController.php');
 			echo '<div class="flex_toppage">
 				<div class="header_mypage">
-					<p><a href="detail.php">ユーザー情報の変更・削除</a></p>
+					<p><a href="../user/edit.php?id=' .$id. '">ユーザー情報の変更・削除</a></p>
 				</div>
 				<div class="header_mypage2">
-					<p><a href="index.php">ログアウト</a></p>
+					<p><a href="../../index.php">ログアウト</a></p>
 				</div>
 			</div>
 			<div>
