@@ -18,7 +18,7 @@
 			<ul class="navi">
 				<li><a href="mypage.php?id=' .$id. '">トップページ</a></li>
 				<li><a href="menu.php?id=' .$id. '">メニュー</a></li>
-				<li><a href="branch.php?id=' .$id. '">購入履歴</a></li>
+				<li><a href="../history/history.php?id=' .$id. '">購入履歴</a></li>
 			</ul>
 			<div class="main_menu_check">
 				<form action="../../Controllers/product/sellController.php?id=' .$id. '" method="post">
