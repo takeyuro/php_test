@@ -18,7 +18,8 @@
 		$id = loginCheck($email, $password);
 
 		if ($id === 0) {
-			die("ログインに失敗しました");
+			header ('Location:../../Views/user/error.php');
+			exit();
 		} else {
 			header ('Location:../../Views/product/mypage.php?id='.$id);
 			exit();
