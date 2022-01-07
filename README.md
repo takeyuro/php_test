@@ -50,8 +50,7 @@ ECサイトのモデルとして、今回は私が好きなマクドナルドさ
 
  <br>
 
- 2. Applications/XAMPP/xamppfiles/htdocs内に新規フォルダを作成する。
-    - もしxamppfileがない場合はApplications/XAMPP/htdocs内に新規ファイルを作成してください。
+ 2. Applications/XAMPP/htdocs内に新規フォルダを作成する。
 
 <br>
 
